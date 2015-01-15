@@ -20,7 +20,10 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/data-fixtures": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
-        "hautelook/alice-bundle": "0.1.*"
+        "hautelook/alice-bundle": "0.1.*",
+        "nelmio/api-doc-bundle": "~2.7",
+        "friendsofsymfony/rest-bundle": "~1.4",
+        "jms/serializer-bundle": "0.13.*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
