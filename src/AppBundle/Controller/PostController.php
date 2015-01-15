@@ -97,9 +97,7 @@ class PostController extends FOSRestController
 
         $post = new Post();
 
-        $post->setTitle($request->request->get('title'));
-        $post->setText($request->request->get('text'));
-        $post->setAuthor($request->request->get('author'));
+        $post = $this->get('app_bundle.handle.post_handle')->create($post, $request->request->all());
 
         $em->persist($post);
         $em->flush();
