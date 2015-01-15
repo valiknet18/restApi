@@ -1,0 +1,6 @@
+AppBundle\Entity\Comment:
+  comment{1..100}:
+    author: <userName>
+    text: <realText>
+    createdAt: <dateTimeBetween>
+    post: @posts*
