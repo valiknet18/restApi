@@ -5,3 +5,7 @@
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
+
+AppBundleV1:
+  resource: "@AppBundle/Resources/config/routing.yml"
+  prefix: /api/v1
