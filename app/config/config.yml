@@ -80,3 +80,7 @@ stof_doctrine_extensions:
             sluggable: true
             timestampable: true
             softdeleteable: true
+
+hautelook_alice:
+    locale: en_US   # default
+    seed: 1         # default
