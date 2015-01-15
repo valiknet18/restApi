@@ -3,11 +3,11 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Post;
 use FOS\RestBundle\Controller\Annotations\View;
+use FOS\RestBundle\Controller\FOSRestController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc as ApiDoc;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class PostController extends Controller
+class PostController extends FOSRestController
 {
     /**
      * @ApiDoc(
@@ -76,8 +76,34 @@ class PostController extends Controller
         return $post;
     }
 
+    /**
+     * @ApiDoc(
+     *      resource = true,
+     *      description = "This method create new post",
+     *      statusCodes = {
+     *          201 = "Post successful created"
+     *      }
+     * )
+     *
+     * @param Request $request
+     * @return \FOS\RestBundle\View\View
+     *
+     * @View()
+     */
     public function postPostAction(Request $request)
     {
+        $em = $this->getDoctrine()
+            ->getManager();
 
+        $post = new Post();
+
+        $post->setTitle($request->request->get('title'));
+        $post->setText($request->request->get('text'));
+        $post->setAuthor($request->request->get('author'));
+
+        $em->persist($post);
+        $em->flush();
+
+        return $this->view('Post created', 201);
     }
 }
