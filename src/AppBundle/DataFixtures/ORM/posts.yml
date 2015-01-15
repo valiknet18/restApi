@@ -1,6 +1,6 @@
 AppBundle\Entity\Post:
   posts{1..30}:
-    title: <word>
-    text: <realText>
-    author: <userName>
+    title: <word()>
+    text: <realText()>
+    author: <userName()>
     tag: 3x @tags*

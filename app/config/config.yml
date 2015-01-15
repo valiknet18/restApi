@@ -84,3 +84,12 @@ stof_doctrine_extensions:
 hautelook_alice:
     locale: en_US   # default
     seed: 1         # default
+
+fos_rest:
+    view:
+        view_response_listener: force
+    routing_loader:
+        default_format: json
+
+sensio_framework_extra:
+    view:    { annotations: false }
