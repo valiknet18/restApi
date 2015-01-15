@@ -1,5 +1,5 @@
 <?php
-namespace Valiknet\Blog\PostsBundle\Entity;
+namespace AppBundle\Entity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
@@ -44,7 +44,7 @@ class Tag
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -54,7 +54,7 @@ class Tag
     /**
      * Set hashTag
      *
-     * @param  string $hashTag
+     * @param string $hashTag
      * @return Tag
      */
     public function setHashTag($hashTag)
@@ -67,7 +67,7 @@ class Tag
     /**
      * Get hashTag
      *
-     * @return string
+     * @return string 
      */
     public function getHashTag()
     {
@@ -77,7 +77,7 @@ class Tag
     /**
      * Set hashSlug
      *
-g     * @param string $hashSlug
+     * @param string $hashSlug
      * @return Tag
      */
     public function setHashSlug($hashSlug)
@@ -90,7 +90,7 @@ g     * @param string $hashSlug
     /**
      * Get hashSlug
      *
-     * @return string
+     * @return string 
      */
     public function getHashSlug()
     {
@@ -100,10 +100,10 @@ g     * @param string $hashSlug
     /**
      * Add post
      *
-     * @param  \Valiknet\Blog\PostsBundle\Entity\Post $post
+     * @param \AppBundle\Entity\Post $post
      * @return Tag
      */
-    public function addPost(\Valiknet\Blog\PostsBundle\Entity\Post $post)
+    public function addPost(\AppBundle\Entity\Post $post)
     {
         $this->post[] = $post;
 
@@ -113,9 +113,9 @@ g     * @param string $hashSlug
     /**
      * Remove post
      *
-     * @param \Valiknet\Blog\PostsBundle\Entity\Post $post
+     * @param \AppBundle\Entity\Post $post
      */
-    public function removePost(\Valiknet\Blog\PostsBundle\Entity\Post $post)
+    public function removePost(\AppBundle\Entity\Post $post)
     {
         $this->post->removeElement($post);
     }
@@ -123,15 +123,10 @@ g     * @param string $hashSlug
     /**
      * Get post
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getPost()
     {
         return $this->post;
-    }
-
-    public function __toString()
-    {
-        return $this->hashTag;
     }
 }

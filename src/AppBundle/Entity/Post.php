@@ -1,5 +1,5 @@
 <?php
-namespace Valiknet\Blog\PostsBundle\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -67,7 +67,6 @@ class Post
      * @ORM\JoinTable(name="posts_tag")
      */
     protected $tag;
-
     /**
      * Constructor
      */
@@ -80,7 +79,7 @@ class Post
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -90,7 +89,7 @@ class Post
     /**
      * Set title
      *
-     * @param  string $title
+     * @param string $title
      * @return Post
      */
     public function setTitle($title)
@@ -103,7 +102,7 @@ class Post
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
     public function getTitle()
     {
@@ -113,7 +112,7 @@ class Post
     /**
      * Set text
      *
-     * @param  string $text
+     * @param string $text
      * @return Post
      */
     public function setText($text)
@@ -126,7 +125,7 @@ class Post
     /**
      * Get text
      *
-     * @return string
+     * @return string 
      */
     public function getText()
     {
@@ -136,7 +135,7 @@ class Post
     /**
      * Set author
      *
-     * @param  string $author
+     * @param string $author
      * @return Post
      */
     public function setAuthor($author)
@@ -149,7 +148,7 @@ class Post
     /**
      * Get author
      *
-     * @return string
+     * @return string 
      */
     public function getAuthor()
     {
@@ -159,7 +158,7 @@ class Post
     /**
      * Set createdAt
      *
-     * @param  \DateTime $createdAt
+     * @param \DateTime $createdAt
      * @return Post
      */
     public function setCreatedAt($createdAt)
@@ -172,7 +171,7 @@ class Post
     /**
      * Get createdAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getCreatedAt()
     {
@@ -180,17 +179,22 @@ class Post
     }
 
     /**
-     * @ORM\PreUpdate
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     * @return Post
      */
-    public function setUpdatedAt()
+    public function setUpdatedAt($updatedAt)
     {
-        $this->updatedAt = new \DateTime();
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 
     /**
      * Get updatedAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getUpdatedAt()
     {
@@ -200,7 +204,7 @@ class Post
     /**
      * Set deletedAt
      *
-     * @param  \DateTime $deletedAt
+     * @param \DateTime $deletedAt
      * @return Post
      */
     public function setDeletedAt($deletedAt)
@@ -213,7 +217,7 @@ class Post
     /**
      * Get deletedAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getDeletedAt()
     {
@@ -223,7 +227,7 @@ class Post
     /**
      * Set slugPost
      *
-     * @param  string $slugPost
+     * @param string $slugPost
      * @return Post
      */
     public function setSlugPost($slugPost)
@@ -236,7 +240,7 @@ class Post
     /**
      * Get slugPost
      *
-     * @return string
+     * @return string 
      */
     public function getSlugPost()
     {
@@ -246,10 +250,10 @@ class Post
     /**
      * Add comment
      *
-     * @param  \Valiknet\Blog\PostsBundle\Entity\Comment $comment
+     * @param \AppBundle\Entity\Comment $comment
      * @return Post
      */
-    public function addComment(\Valiknet\Blog\PostsBundle\Entity\Comment $comment)
+    public function addComment(\AppBundle\Entity\Comment $comment)
     {
         $this->comment[] = $comment;
 
@@ -259,9 +263,9 @@ class Post
     /**
      * Remove comment
      *
-     * @param \Valiknet\Blog\PostsBundle\Entity\Comment $comment
+     * @param \AppBundle\Entity\Comment $comment
      */
-    public function removeComment(\Valiknet\Blog\PostsBundle\Entity\Comment $comment)
+    public function removeComment(\AppBundle\Entity\Comment $comment)
     {
         $this->comment->removeElement($comment);
     }
@@ -269,7 +273,7 @@ class Post
     /**
      * Get comment
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getComment()
     {
@@ -279,12 +283,11 @@ class Post
     /**
      * Add tag
      *
-     * @param  \Valiknet\Blog\PostsBundle\Entity\Tag $tag
+     * @param \AppBundle\Entity\Tag $tag
      * @return Post
      */
-    public function addTag(\Valiknet\Blog\PostsBundle\Entity\Tag $tag)
+    public function addTag(\AppBundle\Entity\Tag $tag)
     {
-        $tag->addPost($this);
         $this->tag[] = $tag;
 
         return $this;
@@ -293,9 +296,9 @@ class Post
     /**
      * Remove tag
      *
-     * @param \Valiknet\Blog\PostsBundle\Entity\Tag $tag
+     * @param \AppBundle\Entity\Tag $tag
      */
-    public function removeTag(\Valiknet\Blog\PostsBundle\Entity\Tag $tag)
+    public function removeTag(\AppBundle\Entity\Tag $tag)
     {
         $this->tag->removeElement($tag);
     }
@@ -303,7 +306,7 @@ class Post
     /**
      * Get tag
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getTag()
     {

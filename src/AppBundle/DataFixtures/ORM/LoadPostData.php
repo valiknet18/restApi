@@ -1,20 +1,16 @@
 <?php
-namespace Valiknet\Blog\PostsBundle\DataFixtures;
+namespace AppBundle\DataFixtures;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
-use Doctrine\Common\Persistence\ObjectManager;
 use Hautelook\AliceBundle\Alice\DataFixtureLoader;
-use Valiknet\Blog\PostsBundle\Entity\Post;
-use Valiknet\Blog\PostsBundle\Entity\Tag;
 
 class LoadPostData extends DataFixtureLoader
 {
     public function getFixtures()
     {
         return [
-            "tags.yml",
-            "posts.yml",
-            "comments.yml"
+            __DIR__."/tags.yml",
+            __DIR__."/posts.yml",
+            __DIR__."/comments.yml"
         ];
     }
 }

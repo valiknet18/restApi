@@ -1,7 +1,6 @@
 AppBundle\Entity\Post:
-  post{1..30}:
+  posts{1..30}:
     title: <word>
     text: <realText>
     author: <userName>
-    createdAt: <dateTimeBetween>
     tag: 3x @tags*

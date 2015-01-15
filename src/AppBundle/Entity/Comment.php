@@ -1,6 +1,7 @@
 <?php
-namespace Valiknet\Blog\PostsBundle\Entity;
+namespace AppBundle\Entity;
 
+use AppBundle\AppBundle;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -42,7 +43,7 @@ class Comment
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -52,7 +53,7 @@ class Comment
     /**
      * Set author
      *
-     * @param  string  $author
+     * @param string $author
      * @return Comment
      */
     public function setAuthor($author)
@@ -65,7 +66,7 @@ class Comment
     /**
      * Get author
      *
-     * @return string
+     * @return string 
      */
     public function getAuthor()
     {
@@ -75,7 +76,7 @@ class Comment
     /**
      * Set text
      *
-     * @param  string  $text
+     * @param string $text
      * @return Comment
      */
     public function setText($text)
@@ -88,7 +89,7 @@ class Comment
     /**
      * Get text
      *
-     * @return string
+     * @return string 
      */
     public function getText()
     {
@@ -98,7 +99,7 @@ class Comment
     /**
      * Set createdAt
      *
-     * @param  \DateTime $createdAt
+     * @param \DateTime $createdAt
      * @return Comment
      */
     public function setCreatedAt($createdAt)
@@ -111,7 +112,7 @@ class Comment
     /**
      * Get createdAt
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
     public function getCreatedAt()
     {
@@ -121,10 +122,10 @@ class Comment
     /**
      * Set post
      *
-     * @param  \Valiknet\Blog\PostsBundle\Entity\Post $post
+     * @param \AppBundle\Entity\Post $post
      * @return Comment
      */
-    public function setPost(\Valiknet\Blog\PostsBundle\Entity\Post $post = null)
+    public function setPost(\AppBundle\Entity\Post $post = null)
     {
         $this->post = $post;
 
@@ -134,7 +135,7 @@ class Comment
     /**
      * Get post
      *
-     * @return \Valiknet\Blog\PostsBundle\Entity\Post
+     * @return \AppBundle\Entity\Post 
      */
     public function getPost()
     {
