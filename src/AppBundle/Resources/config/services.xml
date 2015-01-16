@@ -26,5 +26,8 @@
     <services>
         <service id="app_bundle.handle.post_handle" class="AppBundle\Handler\PostHandler">
         </service>
+
+        <service id="app_bundle.handle.comment_handle" class="AppBundle\Handler\CommentHandler">
+        </service>
     </services>
 </container>

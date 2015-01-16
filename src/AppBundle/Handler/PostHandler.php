@@ -6,7 +6,7 @@ use AppBundle\Entity\Post;
 class PostHandler
 {
     /**
-     * @param Post $post
+     * @param  Post $post
      * @param $requestData
      * @return Post
      */
@@ -18,4 +18,4 @@ class PostHandler
 
         return $post;
     }
-} 
+}

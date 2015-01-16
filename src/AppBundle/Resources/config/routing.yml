@@ -2,4 +2,8 @@ post_api:
   type: rest
   prefix: /post
   resource: "@AppBundle/Controller/PostController.php"
-  name_prefix:  api_1_
+
+comment_api:
+  type: rest
+  prefix: /comment
+  resource: "@AppBundle/Controller/CommentController.php"

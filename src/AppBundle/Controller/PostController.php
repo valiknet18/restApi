@@ -40,7 +40,7 @@ class PostController extends FOSRestController
      *      }
      * )
      *
-     * @param int $limit = 10
+     * @param int $limit  = 10
      * @param int $offset = 10
      *
      * @return \AppBundle\Entity\Post[]|array
@@ -51,7 +51,7 @@ class PostController extends FOSRestController
     {
         $posts = $this->getDoctrine()
                     ->getRepository('AppBundle:Post')
-                    ->findBy([],[], $limit, $offset);
+                    ->findBy([], [], $limit, $offset);
 
         return $posts;
     }
@@ -85,7 +85,7 @@ class PostController extends FOSRestController
      *      }
      * )
      *
-     * @param Request $request
+     * @param  Request                   $request
      * @return \FOS\RestBundle\View\View
      *
      * @View()
