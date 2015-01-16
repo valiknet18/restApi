@@ -4,7 +4,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Comment;
 use AppBundle\Entity\Post;
 use FOS\RestBundle\Controller\FOSRestController;
-use FOS\RestBundle\Controller\Annotations\View;;
+use FOS\RestBundle\Controller\Annotations\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc as ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -43,8 +43,8 @@ class CommentController extends FOSRestController
      *      }
      * )
      *
-     * @param Request $request
-     * @param Post $post
+     * @param  Request                   $request
+     * @param  Post                      $post
      * @return \FOS\RestBundle\View\View
      *
      * @View()
